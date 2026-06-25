@@ -1,6 +1,7 @@
 import { Shield } from 'lucide-react'
 import Resumen from './components/Resumen'
 import InyeccionSQL from './components/InyeccionSQL'
+import XSS from './components/XSS'
 function App() {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
@@ -21,6 +22,7 @@ function App() {
       <main className="flex-1 max-w-4xl mx-auto px-6 py-12 space-y-8">
         <Resumen />
         <InyeccionSQL />
+        <XSS />
       </main>
 
       <footer className="bg-slate-100 text-slate-600 text-sm py-4 px-6">
