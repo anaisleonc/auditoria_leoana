@@ -5,6 +5,7 @@ import XSS from './components/XSS'
 import Comandos from './components/Comandos'
 import Activos from './components/Activos'
 import Matriz from './components/Matriz'
+import Controles from './components/Controles'
 function App() {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
@@ -29,6 +30,7 @@ function App() {
         <Comandos />
         <Activos />
         <Matriz />
+        <Controles />
       </main>
 
       <footer className="bg-slate-100 text-slate-600 text-sm py-4 px-6">
