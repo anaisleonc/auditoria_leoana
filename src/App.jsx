@@ -3,6 +3,7 @@ import Resumen from './components/Resumen'
 import InyeccionSQL from './components/InyeccionSQL'
 import XSS from './components/XSS'
 import Comandos from './components/Comandos'
+import Activos from './components/Activos'
 function App() {
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
@@ -25,6 +26,7 @@ function App() {
         <InyeccionSQL />
         <XSS />
         <Comandos />
+        <Activos />
       </main>
 
       <footer className="bg-slate-100 text-slate-600 text-sm py-4 px-6">
