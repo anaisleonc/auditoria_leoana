@@ -21,9 +21,11 @@ function Comandos() {
         127.0.0.1; cat /etc/passwd
       </pre>
 
-      <div className="bg-amber-50 border border-amber-300 rounded p-4 mb-4 text-amber-800 text-sm">
-        Captura pendiente — se agregará al obtener acceso al entorno DVWA.
-      </div>
+      <img
+  src="/img/comandos_leoana.png"
+  alt="Evidencia de inyección de comandos en DVWA"
+  className="rounded-lg border shadow w-full mb-4"
+/>
 
       <h3 className="font-semibold text-slate-800 mt-6 mb-2">¿Por qué funciona?</h3>
       <p className="text-slate-600 mb-4">
