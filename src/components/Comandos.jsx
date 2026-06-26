@@ -42,7 +42,7 @@ function Comandos() {
           <tr className="border-b"><td className="p-2 font-medium">Confidencialidad</td><td className="p-2">High</td></tr>
           <tr className="border-b"><td className="p-2 font-medium">Integridad</td><td className="p-2">High</td></tr>
           <tr className="border-b"><td className="p-2 font-medium">Disponibilidad</td><td className="p-2">High</td></tr>
-          <tr><td className="p-2 font-medium">Severidad estimada</td><td className="p-2 font-semibold text-red-700">Crítica</td></tr>
+          <tr><td className="p-2 font-medium">Puntaje CVSS 3.1</td><td className="p-2 font-semibold text-red-700">10.0 — Crítica</td></tr>
         </tbody>
       </table>
 

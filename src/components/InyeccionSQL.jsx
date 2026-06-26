@@ -41,7 +41,7 @@ function InyeccionSQL() {
           <tr className="border-b"><td className="p-2 font-medium">Vector de ataque</td><td className="p-2">Network</td></tr>
           <tr className="border-b"><td className="p-2 font-medium">Complejidad</td><td className="p-2">Low</td></tr>
           <tr className="border-b"><td className="p-2 font-medium">Confidencialidad</td><td className="p-2">High</td></tr>
-          <tr><td className="p-2 font-medium">Severidad estimada</td><td className="p-2 font-semibold text-red-600">Alta / Crítica</td></tr>
+          <tr><td className="p-2 font-medium">Puntaje CVSS 3.1</td><td className="p-2 font-semibold text-red-600">9.1 — Crítica</td></tr>
         </tbody>
       </table>
 

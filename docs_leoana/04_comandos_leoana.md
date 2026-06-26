@@ -38,7 +38,7 @@ La causa raíz es la misma que en las dos vulnerabilidades anteriores: la aplica
 | Integridad (I) | High |
 | Disponibilidad (A) | High |
 
-**Puntaje CVSS 3.1:** [PENDIENTE — calcular en https://www.first.org/cvss/calculator/3.1 con los valores de la tabla anterior]
+**Puntaje CVSS 3.1:** 10.0 (Crítica) — Vector: `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H`
 **Severidad estimada:** Crítica (compromete confidencialidad, integridad y disponibilidad a la vez — es la vulnerabilidad de mayor severidad de las tres, ya que implica control sobre el servidor mismo).
 
 ## 4. Política de prevención (causa raíz)

@@ -41,7 +41,7 @@ function XSS() {
           <tr className="border-b"><td className="p-2 font-medium">Vector de ataque</td><td className="p-2">Network</td></tr>
           <tr className="border-b"><td className="p-2 font-medium">Interacción del usuario</td><td className="p-2">Required</td></tr>
           <tr className="border-b"><td className="p-2 font-medium">Confidencialidad</td><td className="p-2">Low</td></tr>
-          <tr><td className="p-2 font-medium">Severidad estimada</td><td className="p-2 font-semibold text-amber-600">Media</td></tr>
+          <tr><td className="p-2 font-medium">Puntaje CVSS 3.1</td><td className="p-2 font-semibold text-amber-600">6.1 — Media</td></tr>
         </tbody>
       </table>
 

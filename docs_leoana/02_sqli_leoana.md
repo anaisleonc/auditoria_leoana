@@ -36,7 +36,7 @@ La causa raíz es que la aplicación no separa los datos ingresados por el usuar
 | Integridad (I) | High |
 | Disponibilidad (A) | None |
 
-**Puntaje CVSS 3.1:** [PENDIENTE — calcular en https://www.first.org/cvss/calculator/3.1 con los valores de la tabla anterior]
+**Puntaje CVSS 3.1:** 9.1 (Crítica) — Vector: `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N`
 **Severidad estimada:** Alta / Crítica (la exposición de toda la base de clientes corporativos, incluyendo posiblemente credenciales y datos de facturación, justifica un puntaje alto en confidencialidad).
 
 ## 4. Política de prevención (causa raíz)

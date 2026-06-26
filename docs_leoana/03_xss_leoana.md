@@ -38,7 +38,7 @@ En un escenario real sobre LogiCarga, esto permitiría a un atacante robar la se
 | Integridad (I) | Low |
 | Disponibilidad (A) | None |
 
-**Puntaje CVSS 3.1:** [PENDIENTE — calcular en https://www.first.org/cvss/calculator/3.1 con los valores de la tabla anterior]
+**Puntaje CVSS 3.1:** 6.1 (Media) — Vector: `CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N`
 **Severidad estimada:** Media (requiere interacción de la víctima, pero compromete la confianza dentro de un portal corporativo usado por múltiples empresas).
 
 ## 4. Política de prevención (causa raíz)
