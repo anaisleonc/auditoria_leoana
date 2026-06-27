@@ -26,6 +26,12 @@ function Prompts() {
       aceptado: 'La estructura visual de tarjetas, la tabla CVSS y el mapa de calor en grilla con colores.',
       corregido: 'Se identificó y solucionó un error de Tailwind no instalado, y un error de importación de lucide-react antes de poder ver los estilos correctamente.',
     },
+    {
+      seccion: 'Inserción de capturas reales y cálculo de CVSS',
+      prompt: 'Guiar la ubicación de las capturas en las carpetas del proyecto, su conexión a los componentes React, y el proceso de cálculo de CVSS 3.1 en la calculadora oficial de FIRST.',
+      aceptado: 'La estructura de carpetas para las imágenes y el código de referencia en Markdown y componentes.',
+      corregido: 'Se detectó y corrigió una duplicación accidental de extensión de archivo (.png.png) que impedía mostrar las imágenes. Los 3 puntajes CVSS (9.1, 6.1, 10.0) fueron calculados directamente por la estudiante en la calculadora oficial, no generados por la IA.',
+    },
   ]
 
   return (

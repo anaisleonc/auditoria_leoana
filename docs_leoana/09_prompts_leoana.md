@@ -32,6 +32,16 @@ Claude (Anthropic), usado como asistente conversacional externo para investigar 
 
 **Qué corregí/amplié:** Pedí que el plan de recuperación incluyera valores concretos de RTO y RPO, en lugar de mencionar "tener respaldos" de forma genérica, para que la propuesta fuera medible y no solo declarativa.
 
+### Sección: Inserción de capturas reales y cálculo de CVSS (sesión final)
+
+**Prompt utilizado:** Una vez obtenido el acceso a DVWA, solicité ayuda para ubicar correctamente las capturas de pantalla en las carpetas del proyecto (`docs_leoana/img_leoana/` y `public/img/`) y conectarlas a los componentes React, además de guiar el cálculo manual de los puntajes CVSS 3.1 en la calculadora oficial de FIRST.
+
+**Qué acepté:** La estructura de carpetas para las imágenes y el código para referenciarlas en los archivos Markdown y en los componentes `.jsx`.
+
+**Qué corregí:** Detecté que al copiar las imágenes se duplicó accidentalmente la extensión del archivo (quedaron como `sqli_leoana.png.png`), lo que impedía que se mostraran en el sitio. Corregí manualmente los 6 nombres de archivo (3 en `docs_leoana/img_leoana/` y 3 en `public/img/`).
+
+**Aporte propio:** Calculé yo misma los 3 puntajes CVSS 3.1 directamente en la calculadora oficial (https://www.first.org/cvss/calculator/3.1), seleccionando los valores de cada métrica según las características de cada vulnerabilidad explicadas previamente, y verifiqué que los resultados coincidieran con los esperados (SQLi: 9.1, XSS: 6.1, Comandos: 10.0) antes de incorporarlos a los documentos y componentes.
+
 ## Reflexión final sobre el uso de la herramienta
 
 Usar IA como apoyo permitió avanzar la documentación técnica mientras se gestionaba en paralelo el acceso al entorno DVWA, que tomó más tiempo de lo esperado en ser otorgado por el docente. Sin embargo, la herramienta no reemplazó las decisiones de fondo: la elección de qué activos define LogiCarga, cómo priorizar el riesgo y qué controles tienen sentido para una empresa de logística (y no para cualquier empresa genérica) requirió indicar explícitamente el contexto de negocio en cada prompt. La principal lección fue que un prompt que menciona la empresa, la vulnerabilidad concreta y el resultado esperado produce contenido directamente utilizable, mientras que una instrucción genérica habría requerido reescribir el contenido desde cero.
