@@ -6,9 +6,10 @@
 
 **Payload utilizado:** `<script>alert('XSS')</script>`
 
-**Resultado obtenido:** [PENDIENTE — pegar aquí la captura cuando se tenga acceso a DVWA. Debe mostrarse el payload ingresado en el campo de texto y el popup/alerta ejecutándose en el navegador.]
+**Resultado obtenido:** Al enviar el payload, el navegador ejecutó el script inyectado, mostrando un cuadro de diálogo con el texto "XSS", confirmando que la entrada no fue sanitizada antes de insertarse en la página.
 
-> Nota: la imagen debe guardarse en `docs_leoana/img_leoana/xss_leoana.png` y además copiarse a `public/img/xss_leoana.png` para que se muestre en el sitio React.
+![Evidencia XSS](img_leoana/xss_leoana.png)
+
 
 ## 2. Por qué funciona esta vulnerabilidad
 

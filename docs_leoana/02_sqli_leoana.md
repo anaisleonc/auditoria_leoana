@@ -5,8 +5,9 @@
 **Dónde se ejecutó:** Módulo "SQL Injection" de DVWA (curso TI3034), como entorno controlado equivalente al formulario de inicio de sesión del portal de clientes de LogiCarga.
 
 **Payload utilizado:** `' OR '1'='1`
-**Resultado obtenido:** [PENDIENTE — pegar aquí la captura cuando se tenga acceso a DVWA. Debe mostrarse el payload ingresado en el campo "User ID" y el listado completo de usuarios devuelto por la aplicación.]
-> Nota: la imagen debe guardarse en `docs_leoana/img_leoana/sqli_leoana.png` y además copiarse a `public/img/sqli_leoana.png` para que se muestre en el sitio React (ver Guía 3, sección 7b).
+**Resultado obtenido:** Al enviar el payload, DVWA devolvió el listado completo de usuarios registrados (admin, Gordon Brown, Hack Me, Pablo Picasso, Bob Smith) en lugar de un único usuario, confirmando la inyección.
+
+![Evidencia inyección SQL](img_leoana/sqli_leoana.png)
 
 ## 2. Por qué funciona esta vulnerabilidad
 
@@ -37,7 +38,7 @@ La causa raíz es que la aplicación no separa los datos ingresados por el usuar
 | Disponibilidad (A) | None |
 
 **Puntaje CVSS 3.1:** 9.1 (Crítica) — Vector: `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N`
-**Severidad estimada:** Alta / Crítica (la exposición de toda la base de clientes corporativos, incluyendo posiblemente credenciales y datos de facturación, justifica un puntaje alto en confidencialidad).
+**Justificación de severidad:** la exposición de toda la base de clientes corporativos, incluyendo posiblemente credenciales y datos de facturación, justifica el puntaje alto en confidencialidad e integridad.
 
 ## 4. Política de prevención (causa raíz)
 

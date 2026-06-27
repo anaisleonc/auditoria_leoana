@@ -6,9 +6,9 @@
 
 **Payload utilizado:** `127.0.0.1; cat /etc/passwd`
 
-**Resultado obtenido:** [PENDIENTE — pegar aquí la captura cuando se tenga acceso a DVWA. Debe mostrarse el resultado del ping y, además, el contenido del archivo /etc/passwd expuesto.]
+**Resultado obtenido:** Junto con el resultado del ping, el servidor mostró el contenido completo del archivo `/etc/passwd`, exponiendo las cuentas del sistema operativo.
 
-> Nota: la imagen debe guardarse en `docs_leoana/img_leoana/comandos_leoana.png` y además copiarse a `public/img/comandos_leoana.png` para que se muestre en el sitio React.
+![Evidencia inyección de comandos](img_leoana/comandos_leoana.png)
 
 ## 2. Por qué funciona esta vulnerabilidad
 
