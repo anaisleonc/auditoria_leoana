@@ -2,46 +2,50 @@
 
 ## Herramienta utilizada
 
-Claude (Anthropic), usado como asistente conversacional externo para investigar las vulnerabilidades, estructurar el análisis técnico y redactar la documentación del informe, dado que el acceso a DVWA aún estaba pendiente de confirmación por parte del docente al momento de iniciar el trabajo.
+Usé Claude (de Anthropic) como apoyo durante todo el trabajo. Lo usé como un asistente con el que iba conversando, no como algo que me hiciera el trabajo de un golpe — le iba pidiendo cosas puntuales y revisando lo que me daba antes de usarlo.
 
 ## Registro de prompts por sección
 
-### Sección: Resumen de la empresa (01_resumen)
+### Resumen de la empresa
 
-**Prompt utilizado:** Definir el contexto de LogiCarga Transportes (empresa de logística asignada, tema E12) como un portal de clientes corporativos con funciones de rastreo de envíos, facturación y notas de entrega, identificando qué datos maneja y por qué es un blanco atractivo para un atacante.
+Le pedí que me ayudara a armar el contexto de LogiCarga: cómo sería el portal, qué cosas maneja (rastreo, facturación, notas de entrega) y cómo conectar eso con las tres vulnerabilidades que tenía que mostrar.
 
-**Qué acepté:** La estructura general del portal (rastreo, facturación, notas) y la conexión directa entre cada función y una de las tres vulnerabilidades a demostrar.
+Lo que usé tal cual: la idea general del portal y cómo cada función se conectaba con un ataque.
 
-**Qué corregí/amplié:** Solicité reforzar el resumen agregando un quinto activo (infraestructura del portal) y una explicación explícita de por qué LogiCarga es un blanco atractivo, ya que la primera versión cumplía el mínimo pero quedaba justa frente al criterio de la rúbrica que pide ≥4 activos con margen.
+Lo que cambié: le pedí que agregara un activo más, porque con 4 quedaba muy al límite de lo que pedía la rúbrica, y también que explicara mejor por qué LogiCarga sería un blanco atractivo para alguien que quisiera atacarlo.
 
-### Sección: Inyección SQL, XSS e inyección de comandos (02, 03, 04)
+### Los 3 ataques (SQLi, XSS, comandos)
 
-**Prompt utilizado:** Para cada vulnerabilidad, solicité una explicación técnica de por qué funciona en el contexto específico del formulario de acceso, el campo de notas y la función de verificación de servidor de LogiCarga respectivamente, junto con la clasificación de métricas CVSS 3.1 y una política de prevención que atacara la causa raíz (no genérica), más un control de mitigación con referencia a un marco (OWASP/CIS).
+Para cada uno le pedí que me explicara técnicamente por qué funcionaba en el caso de LogiCarga, que me diera las métricas para el CVSS, y que la prevención fuera algo concreto (no "actualizar el sistema" sin más), además de una mitigación con algún marco de referencia como OWASP o CIS.
 
-**Qué acepté:** La explicación técnica del mecanismo de cada vulnerabilidad (uso de comillas en SQL, etiquetas script en XSS, el carácter `;` en comandos) y la estructura de vulnerable-vs-seguro en código.
+Lo que usé tal cual: la explicación de cómo funciona cada ataque y los ejemplos de código vulnerable vs. seguro.
 
-**Qué corregí:** Detecté que, al copiar el payload de inyección SQL hacia el editor, las comillas simples se habían transformado en comillas tipográficas curvas (`"..."`), lo que invalidaba el payload real. Corregí manualmente reemplazándolas por comillas simples rectas (`'`), verificando que coincidiera exactamente con lo que se debe escribir en DVWA.
+Algo que tuve que corregir yo: al copiar el payload de SQL injection, las comillas simples se cambiaron solas por comillas "curvas" (de esas que pone el computador automáticamente), y eso hacía que el payload no fuera el correcto. Lo noté y lo arreglé a mano, dejando las comillas rectas como tienen que ser para que funcione en DVWA.
 
-**Pendiente:** Las capturas de pantalla reales y el puntaje CVSS numérico exacto quedan marcados como [PENDIENTE] en los tres archivos, ya que requieren acceso al entorno DVWA (aún no otorgado por el docente al momento de redactar esta bitácora).
+### Activos, matriz, controles y recuperación
 
-### Sección: Activos, matriz de riesgo, controles y recuperación (05, 06, 07, 08)
+Acá le pedí que armara la matriz de riesgo cruzando probabilidad e impacto, pero que cada vulnerabilidad quedara ubicada según los activos que realmente comprometía, no al azar. También que las medidas de prevención y mitigación siguieran ese mismo orden de prioridad.
 
-**Prompt utilizado:** Solicité construir la matriz de riesgo cruzando probabilidad e impacto para las tres vulnerabilidades, justificando cada ubicación en función de los activos comprometidos definidos previamente, y priorizando las medidas de prevención y mitigación según ese resultado, en vez de tratarlas como secciones independientes sin relación entre sí.
+Lo que usé tal cual: el orden de prioridad (comandos > SQL > XSS) y por qué tenía sentido ese orden.
 
-**Qué acepté:** La lógica de priorización (inyección de comandos > SQL > XSS) y su justificación basada en cuántos activos compromete cada una.
+Lo que pedí cambiar: en el plan de recuperación, en vez de dejarlo genérico ("tener respaldos"), le pedí que pusiera números concretos (cada cuánto se respalda, cuánto se demora en recuperarse), para que fuera algo medible de verdad.
 
-**Qué corregí/amplié:** Pedí que el plan de recuperación incluyera valores concretos de RTO y RPO, en lugar de mencionar "tener respaldos" de forma genérica, para que la propuesta fuera medible y no solo declarativa.
+### Componentes React (sitio web)
 
-### Sección: Inserción de capturas reales y cálculo de CVSS (sesión final)
+Le pedí que convirtiera cada archivo de texto en un componente de React, manteniendo el contenido que ya había escrito, pero agregándole forma visual: tarjetas, tablas, y el mapa de calor con colores.
 
-**Prompt utilizado:** Una vez obtenido el acceso a DVWA, solicité ayuda para ubicar correctamente las capturas de pantalla en las carpetas del proyecto (`docs_leoana/img_leoana/` y `public/img/`) y conectarlas a los componentes React, además de guiar el cálculo manual de los puntajes CVSS 3.1 en la calculadora oficial de FIRST.
+Lo que usé tal cual: la estructura de las tarjetas y cómo armó la tabla de CVSS y el mapa de calor.
 
-**Qué acepté:** La estructura de carpetas para las imágenes y el código para referenciarlas en los archivos Markdown y en los componentes `.jsx`.
+Lo que tuve que arreglar yo misma (con ayuda para detectar el error, pero el error era mío): se me había olvidado instalar Tailwind, así que el sitio se veía sin estilos. También tuve un error porque no había instalado la librería de íconos antes de usarla. Los fui solucionando paso a paso hasta que funcionó.
 
-**Qué corregí:** Detecté que al copiar las imágenes se duplicó accidentalmente la extensión del archivo (quedaron como `sqli_leoana.png.png`), lo que impedía que se mostraran en el sitio. Corregí manualmente los 6 nombres de archivo (3 en `docs_leoana/img_leoana/` y 3 en `public/img/`).
+### Inserción de capturas reales y cálculo de CVSS
 
-**Aporte propio:** Calculé yo misma los 3 puntajes CVSS 3.1 directamente en la calculadora oficial (https://www.first.org/cvss/calculator/3.1), seleccionando los valores de cada métrica según las características de cada vulnerabilidad explicadas previamente, y verifiqué que los resultados coincidieran con los esperados (SQLi: 9.1, XSS: 6.1, Comandos: 10.0) antes de incorporarlos a los documentos y componentes.
+Esto lo hice cuando ya tenía acceso a DVWA. Hice los 3 ataques yo misma, tomé las capturas, y pedí ayuda para saber en qué carpetas exactas tenían que ir esas imágenes dentro del proyecto, y cómo conectarlas a los componentes.
 
-## Reflexión final sobre el uso de la herramienta
+Algo que se me complicó: al copiar las imágenes a las carpetas, sin darme cuenta les quedó el nombre duplicado con la extensión repetida (algo así como `sqli_leoana.png.png`), y por eso no se veían en el sitio. Lo detecté revisando por qué no cargaban, y corregí los 6 nombres de archivo a mano.
 
-Usar IA como apoyo permitió avanzar la documentación técnica mientras se gestionaba en paralelo el acceso al entorno DVWA, que tomó más tiempo de lo esperado en ser otorgado por el docente. Sin embargo, la herramienta no reemplazó las decisiones de fondo: la elección de qué activos define LogiCarga, cómo priorizar el riesgo y qué controles tienen sentido para una empresa de logística (y no para cualquier empresa genérica) requirió indicar explícitamente el contexto de negocio en cada prompt. La principal lección fue que un prompt que menciona la empresa, la vulnerabilidad concreta y el resultado esperado produce contenido directamente utilizable, mientras que una instrucción genérica habría requerido reescribir el contenido desde cero.
+Algo que hice completamente sola: calculé yo misma los 3 puntajes de CVSS en la calculadora oficial (la del sitio first.org), eligiendo cada valor según lo que sabía de cada vulnerabilidad. Los resultados me dieron 9.1 para SQL injection, 6.1 para XSS y 10.0 para inyección de comandos — y antes de usarlos los verifiqué para asegurarme de que tenían sentido con la gravedad de cada ataque.
+
+## Reflexión final
+
+Usar IA me ayudó a no quedarme trabada, a poder organizarme mejor. Pero igual tuve que tomar yo las decisiones importantes: qué activos tenía sentido que protegiera una empresa de logística, cómo priorizar los riesgos, y qué controles realmente servían para este caso y no para una empresa cualquiera. Si solo hubiera pedido "hazme un informe de seguridad" sin dar el contexto de LogiCarga, me habría salido algo genérico que no hubiera servido. Lo que más aprendí es que la calidad de lo que pides importa tanto como la herramienta misma.
